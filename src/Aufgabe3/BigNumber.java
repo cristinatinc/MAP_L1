@@ -14,9 +14,7 @@ public class BigNumber {
 
         if (result[0] == 0) {
             int[] finalResult = new int[nr1.length];
-            for (int i = 0; i < nr1.length; i++) {
-                finalResult[i] = result[i + 1];
-            }
+            System.arraycopy(result, 1, finalResult, 0, nr1.length);
             return finalResult;
         } else {
             return result;
