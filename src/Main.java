@@ -1,10 +1,13 @@
 import java.util.Arrays;
 
 import static Aufgabe1.GradeCalculator.*;
+import static Aufgabe2.Array.*;
 
 public class Main {
     public static void main(String[] args) {
         // Aufgabe 1
+        System.out.println("Aufgabe 1: ");
+
         int[] grades = {29, 37, 38, 41, 84, 67};
         int[] insufficientGrades = getInsufficientGrades(grades);
         System.out.println("Die nicht ausreichende Noten aus [29, 37, 38, 41, 84, 67] sind: " + Arrays.toString(insufficientGrades));
@@ -17,6 +20,29 @@ public class Main {
 
         int maxGrade = maxRoundedGrade(grades);
         System.out.println("Maximale abgerundete Note ist " + maxGrade);
+
+
+        // Aufgabe 2
+        System.out.println();
+        System.out.println("Aufgabe 2: ");
+        int[] array = {4, 8, 3, 10, 17};
+
+        int max = getMax(array);
+        int min = getMin(array);
+
+        System.out.println("Maximum vom Array [4, 8, 3, 10, 17] ist " + max);
+        System.out.println("Minimum vom Array [4, 8, 3, 10, 17] ist " + min);
+
+        int maxSum = maxSumWithoutAnElement(array);
+        System.out.println("Maximum sum vom Array [4, 8, 3, 10, 17] ist " + maxSum);
+
+        int minSum = minSumWithoutAnElement(array);
+        System.out.println("Minimum sum vom Array [4, 8, 3, 10, 17] ist " + minSum);
+
+
+        // Aufgabe 3
+        System.out.println();
+        System.out.println("Aufgabe 3: ");
 
     }
 }
