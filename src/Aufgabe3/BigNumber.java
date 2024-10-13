@@ -12,7 +12,7 @@ public class BigNumber {
         }
         result[0] = carry;
 
-        return result;
+        return removeExtraZeros(result, nr1);
 
     }
 
@@ -36,7 +36,7 @@ public class BigNumber {
             result[i] = difference;
         }
 
-        return result;
+        return removeExtraZeros(result, nr1);
     }
 
     public static int[] multiply(int[] nr, int digit) {
@@ -51,7 +51,7 @@ public class BigNumber {
 
         result[0] = carry;
 
-        return result;
+        return removeExtraZeros(result, nr);
     }
 
     private static boolean isLessThan(int[] nr1, int[] nr2) {
@@ -63,6 +63,15 @@ public class BigNumber {
             }
         }
         return false;
+    }
+
+    private static int[] removeExtraZeros(int[] result, int[] nr) {
+        if (result[0] == 0) {
+            int[] finalResult = new int[nr.length];
+            System.arraycopy(result, 1, finalResult, 0, finalResult.length);
+            return finalResult;
+        }
+        return result;
     }
 
 }
