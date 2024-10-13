@@ -56,7 +56,9 @@ public class Main {
         int[] diff = subtract(nr3, nr4);
         System.out.println("[8 3 0 0 0 0 0 0 0] - [5 4 0 0 0 0 0 0 0] = " + Arrays.toString(diff));
         int[] product = multiply(nr5, 2);
-        System.out.println("[2 3 6 0 0 0 0 0 0] * 2 = " + Arrays.toString(product) );
+        System.out.println("[2 3 6 0 0 0 0 0 0] * 2 = " + Arrays.toString(product));
+        int[] quotient = divide(nr5, 2);
+        System.out.println("[2 3 6 0 0 0 0 0 0] / 2 = " + Arrays.toString(quotient));
 
     }
 }

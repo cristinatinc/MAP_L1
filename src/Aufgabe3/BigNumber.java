@@ -54,6 +54,24 @@ public class BigNumber {
         return removeExtraZeros(result, nr);
     }
 
+    public static int[] divide(int[] nr, int digit) {
+        if (digit == 0) {
+            System.out.println("Divide by zero.");
+            return null;
+        }
+
+        int[] result = new int[nr.length];
+        int carry = 0;
+
+        for (int i = 0; i < nr.length; i++) {
+            int current = carry * 10 + nr[i];
+            result[i] = current / digit; // Integer division
+            carry = current % digit; // Update the remainder
+        }
+
+        return removeExtraZeros(result, nr);
+    }
+
     private static boolean isLessThan(int[] nr1, int[] nr2) {
         for (int i = 0; i < nr1.length; i++) {
             if (nr1[i] < nr2[i]) {
