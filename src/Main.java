@@ -47,9 +47,16 @@ public class Main {
 
         int[] nr1 = {1, 3, 0, 0, 0, 0, 0, 0, 0};
         int[] nr2 = {8, 7, 0, 0, 0, 0, 0, 0, 0};
+        int[] nr3 = {8, 3, 0, 0, 0, 0, 0, 0, 0};
+        int[] nr4 = {5, 4, 0, 0, 0, 0, 0, 0, 0};
+        int[] nr5 = {2, 3, 6, 0, 0, 0, 0, 0, 0};
 
         int[] sum = add(nr1, nr2);
         System.out.println("[1 3 0 0 0 0 0 0 0] + [8 7 0 0 0 0 0 0 0] = " + Arrays.toString(sum));
+        int[] diff = subtract(nr3, nr4);
+        System.out.println("[8 3 0 0 0 0 0 0 0] - [5 4 0 0 0 0 0 0 0] = " + Arrays.toString(diff));
+        int[] product = multiply(nr5, 2);
+        System.out.println("[2 3 6 0 0 0 0 0 0] * 2 = " + Arrays.toString(product) );
 
     }
 }
