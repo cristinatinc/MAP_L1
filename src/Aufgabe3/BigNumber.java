@@ -65,8 +65,8 @@ public class BigNumber {
 
         for (int i = 0; i < nr.length; i++) {
             int current = carry * 10 + nr[i];
-            result[i] = current / digit; 
-            carry = current % digit; 
+            result[i] = current / digit;
+            carry = current % digit;
         }
 
         return removeExtraZeros(result, nr);
