@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 import static Aufgabe1.GradeCalculator.*;
 import static Aufgabe2.Array.*;
+import static Aufgabe3.BigNumber.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -43,6 +44,12 @@ public class Main {
         // Aufgabe 3
         System.out.println();
         System.out.println("Aufgabe 3: ");
+
+        int[] nr1 = {1, 3, 0, 0, 0, 0, 0, 0, 0};
+        int[] nr2 = {8, 7, 0, 0, 0, 0, 0, 0, 0};
+
+        int[] sum = add(nr1, nr2);
+        System.out.println("[1 3 0 0 0 0 0 0 0] + [8 7 0 0 0 0 0 0 0] = " + Arrays.toString(sum));
 
     }
 }
