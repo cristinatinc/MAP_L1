@@ -37,6 +37,9 @@ public class BigNumber {
     }
 
     public static int[] multiply(int[] nr, int digit) {
+        if (digit == 0) {
+            return new int[]{0};
+        }
         int[] result = new int[nr.length + 1];
         int carry = 0;
 
