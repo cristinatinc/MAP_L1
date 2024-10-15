@@ -24,7 +24,6 @@ public class GradeCalculator {
             if(grades[i] < 38) roundedOffGrades[i] = grades[i];
             else{
                 int nextMultipleOfFive = ((grades[i] / 5) + 1) * 5;
-
                 if (nextMultipleOfFive - grades[i] < 3) {
                     roundedOffGrades[i] = nextMultipleOfFive;
                 } else {
