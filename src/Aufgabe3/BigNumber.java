@@ -12,8 +12,7 @@ public class BigNumber {
         }
         result[0] = carry;
 
-        return removeExtraZeros(result, nr1);
-
+        return removeExtraZeros(result);
     }
 
     public static int[] subtract(int[] nr1, int[] nr2) {
@@ -21,7 +20,6 @@ public class BigNumber {
             System.out.println("First number must be greater than or equal to the second number.");
             return null;
         }
-
         int[] result = new int[nr1.length];
         int borrow = 0;
 
@@ -35,8 +33,7 @@ public class BigNumber {
             }
             result[i] = difference;
         }
-
-        return removeExtraZeros(result, nr1);
+        return removeExtraZeros(result);
     }
 
     public static int[] multiply(int[] nr, int digit) {
@@ -51,7 +48,7 @@ public class BigNumber {
 
         result[0] = carry;
 
-        return removeExtraZeros(result, nr);
+        return removeExtraZeros(result);
     }
 
     public static int[] divide(int[] nr, int digit) {
@@ -59,7 +56,6 @@ public class BigNumber {
             System.out.println("Divide by zero.");
             return null;
         }
-
         int[] result = new int[nr.length];
         int carry = 0;
 
@@ -68,8 +64,7 @@ public class BigNumber {
             result[i] = current / digit;
             carry = current % digit;
         }
-
-        return removeExtraZeros(result, nr);
+        return removeExtraZeros(result);
     }
 
     private static boolean isLessThan(int[] nr1, int[] nr2) {
@@ -83,13 +78,19 @@ public class BigNumber {
         return false;
     }
 
-    private static int[] removeExtraZeros(int[] result, int[] nr) {
-        if (result[0] == 0) {
-            int[] finalResult = new int[nr.length];
-            System.arraycopy(result, 1, finalResult, 0, finalResult.length);
-            return finalResult;
+    private static int[] removeExtraZeros(int[] result) {
+        int firstNonZeroIndex = 0;
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] != 0) {
+                firstNonZeroIndex = i;
+                break;
+            }
         }
-        return result;
-    }
+        if (firstNonZeroIndex == result.length) return new int[]{0};
 
+        int[] finalResult = new int[result.length - firstNonZeroIndex];
+        System.arraycopy(result, firstNonZeroIndex, finalResult, 0, finalResult.length);
+
+        return finalResult;
+    }
 }
