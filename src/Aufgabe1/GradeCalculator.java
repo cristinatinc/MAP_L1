@@ -36,10 +36,11 @@ public class GradeCalculator {
 
     public static int maxRoundedGrade(int[] grades) {
         int[] roundedOffGrades = getRoundedOffGrades(grades);
-        return Arrays.stream(roundedOffGrades).max().orElse(0);
+        int max=0;
+        for (int roundedOffGrade : roundedOffGrades) {
+            if (roundedOffGrade > max) max = roundedOffGrade;
+        }
+        return max;
     }
-
-
-
 
 }
